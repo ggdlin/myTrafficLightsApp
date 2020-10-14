@@ -17,24 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xe5-hE-heA">
-                                <rect key="frame" x="155.5" y="74" width="103.5" height="103.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="157" y="74" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Xe5-hE-heA" secondAttribute="height" multiplier="1:1" id="6Pu-Tt-cl9"/>
+                                    <constraint firstAttribute="width" constant="100" id="cJE-IW-IXj"/>
+                                    <constraint firstAttribute="height" constant="100" id="smt-u1-Ncl"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBN-e9-fdp">
-                                <rect key="frame" x="155.5" y="207.5" width="103.5" height="103.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="157" y="204" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="oBN-e9-fdp" secondAttribute="height" multiplier="1:1" id="xrJ-48-Tpf"/>
+                                    <constraint firstAttribute="width" constant="100" id="G1c-lC-cte"/>
+                                    <constraint firstAttribute="height" constant="100" id="ZPI-9F-P4J"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Z7-LC-mJ5">
-                                <rect key="frame" x="155.5" y="341" width="103.5" height="103.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="157" y="334" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Z7-LC-mJ5" secondAttribute="height" multiplier="1:1" id="IX3-5i-0nJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="eGV-43-qm9"/>
+                                    <constraint firstAttribute="width" constant="100" id="z5c-La-46K"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgw-7G-YDb">
@@ -44,25 +47,31 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="FiT-xB-Nrf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mgw-7G-YDb" secondAttribute="bottom" constant="30" id="5xb-yh-X6K"/>
-                            <constraint firstItem="1Z7-LC-mJ5" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="FJH-Ym-H43"/>
                             <constraint firstItem="mgw-7G-YDb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Geg-3x-Ps0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mgw-7G-YDb" secondAttribute="trailing" constant="20" id="Ghh-Nt-GdZ"/>
                             <constraint firstItem="oBN-e9-fdp" firstAttribute="top" secondItem="Xe5-hE-heA" secondAttribute="bottom" constant="30" id="IsK-nX-J1C"/>
                             <constraint firstItem="oBN-e9-fdp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IzQ-0x-K50"/>
-                            <constraint firstItem="oBN-e9-fdp" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="M0l-m0-xsG"/>
-                            <constraint firstItem="Xe5-hE-heA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="WIf-d4-Olk"/>
                             <constraint firstItem="Xe5-hE-heA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WWJ-lp-gyR"/>
                             <constraint firstItem="1Z7-LC-mJ5" firstAttribute="top" secondItem="oBN-e9-fdp" secondAttribute="bottom" constant="30" id="cCe-9N-1uU"/>
                             <constraint firstItem="1Z7-LC-mJ5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gKG-iS-6fL"/>
                             <constraint firstItem="Xe5-hE-heA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lc8-ok-3Q7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="1Z7-LC-mJ5" id="twI-6f-XBm"/>
+                        <outlet property="redLightView" destination="Xe5-hE-heA" id="wpi-83-kjJ"/>
+                        <outlet property="startButton" destination="mgw-7G-YDb" id="lf3-W8-eMg"/>
+                        <outlet property="yellowLightView" destination="oBN-e9-fdp" id="uy9-Ey-ZCB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,11 +79,17 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
