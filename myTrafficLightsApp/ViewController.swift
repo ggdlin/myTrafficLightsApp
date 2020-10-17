@@ -14,35 +14,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenLightView: UIView!
     @IBOutlet weak var startButton: UIButton!
     
+    private let isOff: CGFloat = 0.3
+    private let isOn: CGFloat = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startButton.layer.cornerRadius = 20
-        redLightView.layer.cornerRadius = 50
-        yellowLightView.layer.cornerRadius = 50
-        greenLightView.layer.cornerRadius = 50
+        redLightView.alpha = isOff
+        yellowLightView.alpha = isOff
+        greenLightView.alpha = isOff
         
-        redLightView.alpha = 0.3
-        yellowLightView.alpha = 0.3
-        greenLightView.alpha = 0.3
-
     }
-
+    
+    override func viewWillLayoutSubviews() {
+        let cornerRadius = redLightView.frame.width / 2
+        
+        redLightView.layer.cornerRadius = cornerRadius
+        yellowLightView.layer.cornerRadius = cornerRadius
+        greenLightView.layer.cornerRadius = cornerRadius
+    }
+    
     
     @IBAction func startButtonPressed() {
-        switch CGFloat(1.0) {
+        switch isOn {
         case redLightView.alpha:
-            redLightView.alpha = 0.3
-            yellowLightView.alpha = 1
+            redLightView.alpha = isOff
+            yellowLightView.alpha = isOn
         case yellowLightView.alpha:
-            yellowLightView.alpha = 0.3
-            greenLightView.alpha = 1
+            yellowLightView.alpha = isOff
+            greenLightView.alpha = isOn
         case greenLightView.alpha:
-            greenLightView.alpha = 0.3
-            redLightView.alpha = 1
+            greenLightView.alpha = isOff
+            redLightView.alpha = isOn
         default:
-            redLightView.alpha = 1
+            redLightView.alpha = isOn
             startButton.setTitle("NEXT", for: .normal)
         }
     }
